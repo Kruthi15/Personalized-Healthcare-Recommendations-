@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Healthcare Recommendation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Fonts Example (optional) -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="health-icon">🩺</span>
+            HealthCare Recommender
+        </div>
+    </header>
+    <main>
+        <div class="card">
+            <h2>Enter Patient Details</h2>
+            <form action="/predict" method="post">
+                <label>Recency<br>
+                    <span class="label-desc">(Days since last donation)</span>
+                </label>
+                <input type="number" name="recency" required min="0">
+
+                <label>Frequency <br>
+                    <span class="label-desc">(Total donations)</span>
+                </label>
+                <input type="number" name="frequency" required min="1">
+
+                <label>Monetary <br>
+                    <span class="label-desc">(ML blood donated)</span>
+                </label>
+                <input type="number" name="monetary" required min="50">
+
+                <label>Time <br>
+                    <span class="label-desc">(Months since first donation)</span>
+                </label>
+                <input type="number" name="time" required min="0">
+
+                <button type="submit" class="cta-btn">Get Recommendation</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

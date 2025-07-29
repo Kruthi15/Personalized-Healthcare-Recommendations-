@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recommendation Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="health-icon">🩺</span>
+            HealthCare Recommender
+        </div>
+    </header>
+    <main>
+        <div class="card result-card">
+            <h2>Personalized Healthcare Recommendation</h2>
+            <p class="recommend-msg">{{ recommendation }}</p>
+            <a href="/" class="back-link">← Back to Home</a>
+        </div>
+    </main>
+</body>
+</html>
